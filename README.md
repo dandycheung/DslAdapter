@@ -131,7 +131,7 @@ IM界面也能完美胜任|可动态控制`Item`的表单界面
 
 ## 根目录中的 `build.gradle`
 
-```kotlin
+```groovy
 allprojects {
     repositories {
         ...
@@ -142,7 +142,7 @@ allprojects {
 
 ## APP目录中的 `build.gradle`
 
-```kotlin
+```groovy
 dependencies {
     //androidx(推荐)
     implementation 'com.github.angcyo:DslAdapter:7.1.0'
@@ -155,6 +155,32 @@ dependencies {
     implementation 'com.github.angcyo:DslAdapter:master-SNAPSHOT'
 }
 ```
+
+# 使用`Maven Central`的方式, 引入库.
+
+> 仅支持`>=7.1.0`版本.
+
+## 配置仓库
+
+```groovy
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral() //this is important!
+    }
+}
+```
+
+## 添加依赖
+
+```groovy
+dependencies {
+    ...
+    implementation "io.github.angcyo.DslAdapter:Adapter:7.1.0"
+}
+```
+
 发布的版本号,可以在这里查看. [点击查看](https://github.com/angcyo/DslAdapter/tags)
 
 # 功能使用
@@ -200,5 +226,3 @@ dependencies {
 # 👏 感谢
 [![angcyo/DslAdapter](https://reporoster.com/stars/angcyo/DslAdapter)](https://github.com/angcyo/DslAdapter/stargazers)
 
-## 访问统计
-<img height="30px" src = "https://profile-counter.glitch.me/DslAdapter/count.svg" alt ="Loading">

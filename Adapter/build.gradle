@@ -63,3 +63,6 @@ dependencies {
     //https://mvnrepository.com/artifact/androidx.fragment/fragment
     compileOnly "androidx.fragment:fragment-ktx:1.8.8"
 }
+
+apply from: "$gradleHost/master/publish.gradle"
+apply from: "../gradle/jreleaser.gradle"
